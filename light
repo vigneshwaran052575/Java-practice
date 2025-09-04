@@ -1,0 +1,72 @@
+class Appliance {
+    void on() {
+        System.out.println("Appliance is turned ON.");
+    }
+
+    void off() {
+        System.out.println("Appliance is turned OFF.");
+    }
+}
+
+// Light class extending Appliance
+class Light extends Appliance {
+    @Override
+    void on() {
+        System.out.println("Light is ON.");
+    }
+
+    @Override
+    void off() {
+        System.out.println("Light is OFF.");
+    }
+}
+
+// Fan class extending Appliance
+class Fan extends Appliance {
+    @Override
+    void on() {
+        System.out.println("Fan is ON.");
+    }
+
+    @Override
+    void off() {
+        System.out.println("Fan is OFF.");
+    }
+}
+
+// Both class for turning on/off both Light and Fan
+class Both {
+    Light light = new Light();
+    Fan fan = new Fan();
+
+    void on() {
+        light.on();
+        fan.on();
+    }
+
+    void off() {
+        light.off();
+        fan.off();
+    }
+}
+
+// Main class to test
+public class Main {
+    public static void main(String[] args) {
+        Light light = new Light();
+        Fan fan = new Fan();
+        Both both = new Both();
+
+        System.out.println("Controlling Light:");
+        light.on();
+        light.off();
+
+        System.out.println("\nControlling Fan:");
+        fan.on();
+        fan.off();
+
+        System.out.println("\nControlling Both:");
+        both.on();
+        both.off();
+    }
+}
